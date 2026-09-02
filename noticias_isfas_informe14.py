@@ -1,5 +1,5 @@
-# noticias_isfas13.py
-# v20.7 - Historial persistente, diseño integrado y copia optimizada a ancho completo (100%) para Outlook
+# noticias_isfas15.py
+# v15.0 - Sincronización exacta de tipografías y tamaños entre informe interactivo y copiado para email
 
 import os
 import json
@@ -258,7 +258,7 @@ def generar_html_interactivo(noticias):
 
         .card {{
             padding: 16px 20px;
-            margin-bottom: 12px;
+            margin-bottom: 16px;
             border-radius: 8px;
             box-shadow: 0 2px 4px rgba(0,0,0,0.03);
             display: flex;
@@ -278,10 +278,10 @@ def generar_html_interactivo(noticias):
             text-transform: uppercase;
         }}
 
-        .title {{ font-size: 1.05rem; font-weight: 600; margin: 8px 0; line-height: 1.4; }}
-        .title a {{ color: #2d3748; text-decoration: none; }}
+        .title {{ font-size: 1.1rem; font-weight: 600; margin: 10px 0 6px 0; line-height: 1.4; }}
+        .title a {{ color: var(--text-color); text-decoration: none; }}
         .title a:hover {{ color: var(--accent-blue); text-decoration: underline; }}
-        .meta {{ font-size: 0.82rem; color: #718096; }}
+        .meta {{ font-size: 0.85rem; color: #718096; }}
 
         .checkbox-container {{ padding-top: 4px; }}
         input[type="checkbox"] {{ transform: scale(1.3); cursor: pointer; }}
@@ -448,22 +448,19 @@ def generar_html_interactivo(noticias):
             let fechaTexto = hoy.toLocaleDateString('es-ES', opciones);
             fechaTexto = fechaTexto.charAt(0).toUpperCase() + fechaTexto.slice(1);
 
-            // --- HTML FLUIDO AL 100% DE ANCHO (Estilo Web a pantalla completa) ---
-            let htmlSnippet = '<table width="100%" cellpadding="0" cellspacing="0" border="0" style="background-color: #f7fafc; font-family: Arial, sans-serif;">';
+            let htmlSnippet = '<table width="100%" cellpadding="0" cellspacing="0" border="0" style="background-color: #f7fafc; font-family: Montserrat, Arial, sans-serif;">';
             htmlSnippet += '<tr><td align="center" style="padding: 0;">';
             
             htmlSnippet += '<table width="100%" cellpadding="0" cellspacing="0" border="0" style="background-color: #ffffff; border-top: 1px solid #e2e8f0; border-bottom: 1px solid #e2e8f0;">';
             
-            // 1. ENCABEZADO CORPORATIVO EXTENDIDO AL 100%
-            htmlSnippet += '<tr><td align="center" style="background-color: #1a365d; padding: 30px 20px; color: #ffffff;">';
+            htmlSnippet += '<tr><td align="center" style="background: linear-gradient(135deg, #1a365d 0%, #2c5282 100%); background-color: #2c5282; padding: 40px 20px; color: #ffffff; border-bottom: 4px solid #3182ce;">';
             htmlSnippet += '<table width="100%" cellpadding="0" cellspacing="0" border="0"><tr><td align="center">';
-            htmlSnippet += '<h1 style="margin: 0; font-size: 24px; font-weight: bold; letter-spacing: 2px; text-transform: uppercase; color: #ffffff;">ISFAS</h1>';
-            htmlSnippet += '<div style="margin-top: 5px; font-size: 13px; color: #e2e8f0; letter-spacing: 1px;">OFICINA DE COMUNICACIÓN</div>';
-            htmlSnippet += '<table border="0" cellspacing="0" cellpadding="0" style="margin-top: 12px;"><tr><td align="center" bgcolor="#2c5282" style="padding: 6px 18px; border-radius: 12px; font-size: 12px; color: #ffffff; font-weight: bold;">' + fechaTexto + '</td></tr></table>';
+            htmlSnippet += '<h1 style="margin: 0; font-size: 32px; font-weight: 700; letter-spacing: 2px; text-transform: uppercase; color: #ffffff; font-family: Montserrat, Arial, sans-serif;">ISFAS</h1>';
+            htmlSnippet += '<div style="margin-top: 8px; font-size: 16px; color: #e2e8f0; letter-spacing: 1px; font-family: Montserrat, Arial, sans-serif;">OFICINA DE COMUNICACIÓN</div>';
+            htmlSnippet += '<table border="0" cellspacing="0" cellpadding="0" style="margin-top: 15px;"><tr><td align="center" bgcolor="rgba(255, 255, 255, 0.15)" style="padding: 6px 16px; border-radius: 20px; font-size: 14px; color: #ffffff; font-weight: 600; border: 1px solid rgba(255, 255, 255, 0.2); font-family: Montserrat, Arial, sans-serif;">' + fechaTexto + '</td></tr></table>';
             htmlSnippet += '</td></tr></table>';
             htmlSnippet += '</td></tr>';
 
-            // 2. CUERPO DE NOTICIAS (Con espaciado fluido)
             htmlSnippet += '<tr><td style="padding: 30px 40px;">';
 
             let textSnippet = "";
@@ -471,19 +468,19 @@ def generar_html_interactivo(noticias):
             seleccionados.forEach(item => {{
                 enviadasSet.add(item.enlace);
 
-                htmlSnippet += '<table width="100%" cellpadding="0" cellspacing="0" border="0" style="background-color: #ffffff; border-left: 4px solid #3182ce; border-top: 1px solid #edf2f7; border-right: 1px solid #edf2f7; border-bottom: 1px solid #edf2f7; margin-bottom: 15px; border-radius: 6px;">';
-                htmlSnippet += '<tr><td style="padding: 18px;">';
+                htmlSnippet += '<table width="100%" cellpadding="0" cellspacing="0" border="0" style="background-color: #ffffff; border-left: 5px solid #3182ce; border-top: 1px solid #edf2f7; border-right: 1px solid #edf2f7; border-bottom: 1px solid #edf2f7; margin-bottom: 16px; border-radius: 8px;">';
+                htmlSnippet += '<tr><td style="padding: 16px 20px;">';
                 
                 htmlSnippet += '<table width="100%" cellpadding="0" cellspacing="0" border="0"><tr>';
-                htmlSnippet += '<td><span style="font-size: 10px; font-weight: bold; padding: 3px 8px; background-color: #ebf8ff; color: #2b6cb0; text-transform: uppercase;">' + item.categoria + '</span></td>';
-                htmlSnippet += '<td align="right" style="font-size: 11px; color: #718096;">🕒 ' + item.fecha_str + '</td>';
+                htmlSnippet += '<td><span style="font-size: 11px; font-weight: 700; padding: 4px 8px; background-color: #ebf8ff; color: #2b6cb0; text-transform: uppercase; border-radius: 4px; font-family: Montserrat, Arial, sans-serif;">' + item.categoria + '</span></td>';
+                htmlSnippet += '<td align="right" style="font-size: 13.6px; color: #718096; font-family: Montserrat, Arial, sans-serif;">🕒 ' + item.fecha_str + '</td>';
                 htmlSnippet += '</tr></table>';
 
-                htmlSnippet += '<div style="font-size: 16px; font-weight: bold; margin: 10px 0 6px 0; line-height: 1.4;">';
+                htmlSnippet += '<div style="font-size: 17.6px; font-weight: 600; margin: 10px 0 6px 0; line-height: 1.4; font-family: Montserrat, Arial, sans-serif;">';
                 htmlSnippet += '<a href="' + item.enlace + '" target="_blank" style="color: #2d3748; text-decoration: none;">' + item.titulo + '</a>';
                 htmlSnippet += '</div>';
 
-                htmlSnippet += '<div style="font-size: 11px; color: #718096;">📍 Fuente: <strong>' + item.fuente + '</strong></div>';
+                htmlSnippet += '<div style="font-size: 13.6px; color: #718096; font-family: Montserrat, Arial, sans-serif;">📍 Fuente: <strong>' + item.fuente + '</strong></div>';
                 
                 htmlSnippet += '</td></tr></table>';
 
@@ -492,10 +489,9 @@ def generar_html_interactivo(noticias):
 
             htmlSnippet += '</td></tr>';
 
-            // 3. PIE DE PÁGINA EXTENDIDO AL 100%
-            htmlSnippet += '<tr><td align="center" style="background-color: #2c5282; color: #ffffff; padding: 20px; font-size: 13px; font-weight: bold; line-height: 1.4;">';
+            htmlSnippet += '<tr><td align="center" style="background-color: #2c5282; color: #ffffff; padding: 20px; font-size: 15.2px; font-weight: 600; letter-spacing: 0.5px; line-height: 1.5; font-family: Montserrat, Arial, sans-serif;">';
             htmlSnippet += '@ISFAS - Instituto Social de las Fuerzas Armadas';
-            htmlSnippet += '<div style="color: #cbd5e0; font-weight: normal; font-size: 11px; margin-top: 4px;">Oficina de Comunicación - Capitán de Corbeta Fran Lozano</div>';
+            htmlSnippet += '<div style="color: #cbd5e0; font-weight: 400; display: block; font-size: 13.6px; margin-top: 4px; font-family: Montserrat, Arial, sans-serif;">Oficina de Comunicación - Capitán de Corbeta Fran Lozano</div>';
             htmlSnippet += '</td></tr>';
 
             htmlSnippet += '</table>';
@@ -508,7 +504,7 @@ def generar_html_interactivo(noticias):
                 const blobText = new Blob([textSnippet], {{ type: 'text/plain' }});
                 const data = [new ClipboardItem({{ 'text/html': blobHtml, 'text/plain': blobText }})];
                 navigator.clipboard.write(data).then(() => {{
-                    alert('¡Informe copiado al 100% de ancho con éxito para Outlook!');
+                    alert('¡Informe copiado con éxito y formateado idéntico para Outlook!');
                 }}).catch(err => {{
                     fallbackCopiarTexto(textSnippet);
                 }});
@@ -746,32 +742,23 @@ def generar_html_interactivo(noticias):
             URL.revokeObjectURL(url);
         }}
 
-        // Inicialización
-        cargarFechaEncabezado();
-        poblarDesplegable();
-        renderizar(dataset);
+        window.onload = function() {{
+            cargarFechaEncabezado();
+            poblarDesplegable();
+            renderizar(dataset);
+        }};
     </script>
 </body>
 </html>
 """
 
-def main():
-    print("⏳ Descargando noticias desde los RSS de Inoreader...")
+if __name__ == '__main__':
     noticias = obtener_noticias()
-    
-    timestamp_filename = datetime.now().strftime("%Y%m%d_%H%M%S")
-    html_filename = f"Informe_Sanidad_Interactivo_{timestamp_filename}.html"
-    
-    html_content = generar_html_interactivo(noticias)
-    
+    html_contenido = generar_html_interactivo(noticias)
+    nombre_salida = "gestor_noticias_isfas.html"
     try:
-        with open(html_filename, "w", encoding="utf-8") as f:
-            f.write(html_content)
-            f.flush()
-            os.fsync(f.fileno())
-        print(f"📄 Archivo HTML generado con éxito: {os.path.abspath(html_filename)}")
+        with open(nombre_salida, "w", encoding="utf-8") as f:
+            f.write(html_contenido)
+        print(f"✅ Interfaz generada con éxito en '{nombre_salida}'.")
     except Exception as e:
-        print(f"❌ Error al guardar el archivo: {e}")
-
-if __name__ == "__main__":
-    main()
+        print(f"⚠️ Error al guardar el archivo HTML: {e}")
