@@ -18,16 +18,13 @@ jobs:
       with:
         python-version: '3.10'
 
-    - name: Instalar dependencias
-      run: pip install feedparser
-
     - name: Ejecutar script de noticias
       run: python noticias_isfas_informe14.py
 
     - name: Organizar informe generado en la carpeta informes
       run: |
         mkdir -p informes
-        mv gestor_noticias_isfas.html informes/ || true
+        mv Informe_Sanidad_Interactivo_*.html informes/ || true
 
     - name: Guardar cambios y actualizar historial JSON en GitHub
       uses: stefanzweifel/git-auto-commit-action@v5
