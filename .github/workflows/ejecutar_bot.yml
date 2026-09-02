@@ -27,7 +27,7 @@ jobs:
     - name: Organizar informe generado en la carpeta informes
       run: |
         mkdir -p informes
-        mv Informe_Sanidad_Interactivo_*.html informes/ || true
+        mv gestor_noticias_isfas.html informes/ || true
 
     - name: Guardar cambios y actualizar historial JSON en GitHub
       uses: stefanzweifel/git-auto-commit-action@v5
