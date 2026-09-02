@@ -32,34 +32,55 @@ def guardar_historial_json(enlaces):
         print(f"⚠️ Error al guardar el archivo de historial: {e}")
 
 # DICCIONARIO DE FUENTES RSS COMPLETO (Sincronizado con Inoreader)
-FEEDS = {
-    'SNS e ISFAS': 'https://news.google.com/rss/search?q=' + urllib.parse.quote('("Sistema Nacional de Salud" O "SNS") Y ("ISFAS" O "Instituto Social de las Fuerzas Armadas")') + '&hl=es&gl=ES&ceid=ES:es',
-    'SNS y Muface/Mugeju': 'https://news.google.com/rss/search?q=' + urllib.parse.quote('("Sistema Nacional de Salud" O "SNS") Y ("ISFAS" O "muface" O "mugeju")') + '&hl=es&gl=ES&ceid=ES:es',
-    'BOD y Defensa': 'https://news.google.com/rss/search?q=' + urllib.parse.quote('("BOD" O "Boletin Oficial de Defensa" O sitio:defensa.gob.es)') + '&hl=es&gl=ES&ceid=ES:es',
-    'CSIF e ISFAS': 'https://news.google.com/rss/search?q=' + urllib.parse.quote('"CSIF" Y ("ISFAS" O "Sanidad Militar")') + '&hl=es&gl=ES&ceid=ES:es',
-    'Asociaciones y Muface': 'https://news.google.com/rss/search?q=' + urllib.parse.quote('("ASFASPRO" O "UMT" O "AUME") Y "ISFAS"') + '&hl=es&gl=ES&ceid=ES:es',
-    'Hospitales Militares': 'https://news.google.com/rss/search?q=' + urllib.parse.quote('"Sanidad Militar" Y ("ISFAS" O "hospital militar" O "Gómez Ulla")') + '&hl=es&gl=ES&ceid=ES:es',
-    'COPERFAS e ISFAS': 'https://news.google.com/rss/search?q=' + urllib.parse.quote('"COPERFAS" E "ISFAS"') + '&hl=es&gl=ES&ceid=ES:es',
-    'Dependencia y Ayudas ISFAS': 'https://news.google.com/rss/search?q=' + urllib.parse.quote('ISFAS AND ("prestación económica" O "ayuda de dependencia")') + '&hl=es&gl=ES&ceid=ES:es',
-    'Delegaciones ISFAS': 'https://news.google.com/rss/search?q=' + urllib.parse.quote('"delegación del ISFAS" O "delegaciones provinciales del ISFAS"') + '&hl=es&gl=ES&ceid=ES:es',
-    'BOE - ISFAS / Defensa': 'https://news.google.com/rss/search?q=' + urllib.parse.quote('site:boe.es (ISFAS O "Instituto Social de las Fuerzas Armadas")') + '&hl=es&gl=ES&ceid=ES:es',
-    'ISFAS / MUFACE Genérico': 'https://news.google.com/rss/search?q=' + urllib.parse.quote('ISFAS O "Instituto Social de las Fuerzas Armadas" O ("MUFACE")') + '&hl=es&gl=ES&ceid=ES:es',
-    'Asociaciones Militares': 'https://news.google.com/rss/search?q=' + urllib.parse.quote('ISFAS (ASFASPRO O ATME O AUME)') + '&hl=es&gl=ES&ceid=ES:es',
-    'Prensa Sanitaria Especializada': 'https://news.google.com/rss/search?q=' + urllib.parse.quote('ISFAS (Consalud O "Redacción Médica" O "Gaceta Médica")') + '&hl=es&gl=ES&ceid=ES:es',
-    'Resoluciones e Instrucciones ISFAS': 'https://news.google.com/rss/search?q=' + urllib.parse.quote('ISFAS Y (BOE O resolución OR instrucción)') + '&hl=es&gl=ES&ceid=ES:es',
-    'Receta Electrónica Avanzada': 'https://news.google.com/rss/search?q=' + urllib.parse.quote('ISFAS AND ("receta electrónica" OR farmacia OR prestaciones)') + '&hl=es&gl=ES&ceid=ES:es',
-    'Concierto Sanitario y Cuadro Médico': 'https://news.google.com/rss/search?q=' + urllib.parse.quote('ISFAS AND ("concierto sanitario" O "cuadro médico" O Adeslas O Asisa)') + '&hl=es&gl=ES&ceid=ES:es',
-    'Convenios y Aseguradoras': 'https://news.google.com/rss/search?q=' + urllib.parse.quote('ISFAS (convenio OR concierto OR asisa OR adeslas OR "asistencia sanitaria")') + '&hl=es&gl=ES&ceid=ES:es',
-    'Receta Electrónica Mutualidades': 'https://news.google.com/rss/search?q=' + urllib.parse.quote('"receta electrónica" (ISFAS O MUFACE O MUGEJU)') + '&hl=es&gl=ES&ceid=ES:es',
-    'Receta Electrónica Básica': 'https://news.google.com/rss/search?q=' + urllib.parse.quote('"receta electrónica ISFAS O MUFACE"') + '&hl=es&gl=ES&ceid=ES:es',
-    'Búsqueda Directa ISFAS': 'https://news.google.com/rss/search?q=' + urllib.parse.quote('"ISFAS"') + '&hl=es&gl=ES&ceid=ES:es',
-    'Alerta Google - Concierto Sanitario': 'https://news.google.com/rss/search?q=' + urllib.parse.quote('"concierto sanitario" (ISFAS O MUFACE O MUGEJU)') + '&hl=es&gl=ES&ceid=ES:es',
-    'Alerta Google - Receta Electrónica': 'https://news.google.com/rss/search?q=' + urllib.parse.quote('"receta electrónica" (ISFAS O MUFACE O MUGEJU)') + '&hl=es&gl=ES&ceid=ES:es',
-    'Alerta Google - Sanidad Militar': 'https://news.google.com/rss/search?q=' + urllib.parse.quote('"sanidad militar" O "Gómez Ulla"') + '&hl=es&gl=ES&ceid=ES:es',
-    'Google Alert - Prestaciones': 'https://news.google.com/rss/search?q=' + urllib.parse.quote('prestaciones ISFAS OR MUFACE OR MUGEJU') + '&hl=es&gl=ES&ceid=ES:es',
-    'Medios Especializados Directos': 'https://news.google.com/rss/search?q=' + urllib.parse.quote('ISFAS site:redaccionmedica.com OR site:gacetamedica.com') + '&hl=es&gl=ES&ceid=ES:es'
-}
+FUENTES_RSS = [
+    # 1. NÚCLEO INSTITUCIONAL, BOE Y BOD[cite: 2]
+    {"nombre": "BOE - Búsqueda Directa ISFAS", "categoria": "Institucional", "url": "https://news.google.com/rss/search?q=site%3Aboe.es+ISFAS&hl=es&gl=ES&ceid=ES:es"},
+    {"nombre": "BOE - Mutualidades y ISFAS", "categoria": "Institucional", "url": "https://news.google.com/rss/search?q=site%3Aboe.es+ISFAS+MUFACE&hl=es&gl=ES&ceid=ES:es"},
+    {"nombre": "ISFAS Sistema Nacional de Salud", "categoria": "Institucional", "url": "https://news.google.com/rss/search?q=ISFAS+%22Sistema+Nacional+de+Salud%22&hl=es&gl=ES&ceid=ES:es"},
+    {"nombre": "ISFAS MUFACE MUGEJU", "categoria": "Institucional", "url": "https://news.google.com/rss/search?q=ISFAS+MUFACE+MUGEJU&hl=es&gl=ES&ceid=ES:es"},
+    {"nombre": "Boletin Oficial de Defensa BOD", "categoria": "Institucional", "url": "https://news.google.com/rss/search?q=BOD+%22Boletin+Oficial+de+Defensa%22+site%3Adefensa.gob.es&hl=es&gl=ES&ceid=ES:es"},
+    {"nombre": "Resoluciones e Instrucciones ISFAS", "categoria": "Institucional", "url": "https://news.google.com/rss/search?q=ISFAS+BOE+resolucion+instruccion&hl=es&gl=ES&ceid=ES:es"},
+    {"nombre": "Delegaciones ISFAS", "categoria": "Institucional", "url": "https://news.google.com/rss/search?q=%22delegacion+del+ISFAS%22&hl=es&gl=ES&ceid=ES:es"},
+    {"nombre": "ISFAS Instituto Social de las Fuerzas Armadas", "categoria": "Institucional", "url": "https://news.google.com/rss/search?q=ISFAS+%22Instituto+Social+de+las+Fuerzas+Armadas%22+MUFACE&hl=es&gl=ES&ceid=ES:es"},
 
+    # 2. FUENTES DIRECTAS E INSTITUCIONALES[cite: 2]
+    {"nombre": "Notas de Prensa ISFAS", "categoria": "Oficial", "url": "https://www.defensa.gob.es/isfas/gabinete/notas_prensa/rss.xml"},
+    {"nombre": "Gaceta Médica", "categoria": "Sanidad", "url": "https://gacetamedica.com/feed/"},
+    {"nombre": "Noticias de Diario Médico", "categoria": "Sanidad", "url": "https://www.diariomedico.com/feed"},
+    {"nombre": "Redacción Médica", "categoria": "Sanidad", "url": "https://redaccionmedica.com/rss/ultimas-noticias.xml"},
+
+    # 3. CONCIERTOS, FARMACIA Y RECETA ELECTRÓNICA[cite: 2]
+    {"nombre": "Concierto Sanitario y Cuadro Médico", "categoria": "Sanidad", "url": "https://news.google.com/rss/search?q=ISFAS+%22concierto+sanitario%22+Adeslas+Asisa&hl=es&gl=ES&ceid=ES:es"},
+    {"nombre": "Convenios y Aseguradoras", "categoria": "Sanidad", "url": "https://news.google.com/rss/search?q=ISFAS+convenio+concierto+asisa+adeslas&hl=es&gl=ES&ceid=ES:es"},
+    {"nombre": "Receta Electrónica Avanzada", "categoria": "Farmacia", "url": "https://news.google.com/rss/search?q=ISFAS+%22receta+electronica%22+farmacia&hl=es&gl=ES&ceid=ES:es"},
+    {"nombre": "Receta Electrónica Mutualidades", "categoria": "Farmacia", "url": "https://news.google.com/rss/search?q=%22receta+electronica%22+ISFAS+MUFACE+MUGEJU&hl=es&gl=ES&ceid=ES:es"},
+    {"nombre": "Sanidad Militar Gomez Ulla", "categoria": "Sanidad", "url": "https://news.google.com/rss/search?q=%22Sanidad+Militar%22+ISFAS+%22Gomez+Ulla%22&hl=es&gl=ES&ceid=ES:es"},
+
+    # 4. PRESTACIONES SOCIALES Y DEPENDENCIA[cite: 2]
+    {"nombre": "Dependencia y Ayudas ISFAS", "categoria": "Prestaciones", "url": "https://news.google.com/rss/search?q=ISFAS+%22prestacion+economica%22+%22ayuda+de+dependencia%22&hl=es&gl=ES&ceid=ES:es"},
+    {"nombre": "Prestaciones Mutuas", "categoria": "Prestaciones", "url": "https://news.google.com/rss/search?q=prestaciones+ISFAS+MUFACE+MUGEJU&hl=es&gl=ES&ceid=ES:es"},
+
+    # 5. ASOCIACIONES Y SINDICATOS[cite: 2]
+    {"nombre": "CSIF e ISFAS", "categoria": "Asociaciones", "url": "https://news.google.com/rss/search?q=CSIF+ISFAS+%22Sanidad+Militar%22&hl=es&gl=ES&ceid=ES:es"},
+    {"nombre": "COPERFAS e ISFAS", "categoria": "Asociaciones", "url": "https://news.google.com/rss/search?q=COPERFAS+ISFAS&hl=es&gl=ES&ceid=ES:es"},
+    {"nombre": "Asociaciones Militares (ASFASPRO AUME ATME)", "categoria": "Asociaciones", "url": "https://news.google.com/rss/search?q=ISFAS+ASFASPRO+ATME+AUME&hl=es&gl=ES&ceid=ES:es"},
+
+    # 6. PRENSA NACIONAL[cite: 2]
+    {"nombre": "ABC - ISFAS y Mutualidades", "categoria": "Prensa Nacional", "url": "https://news.google.com/rss/search?q=site%3Aabc.es+ISFAS+MUFACE&hl=es&gl=ES&ceid=ES:es"},
+    {"nombre": "El País - ISFAS y Sanidad", "categoria": "Prensa Nacional", "url": "https://news.google.com/rss/search?q=site%3Aelpais.com+ISFAS+sanidad&hl=es&gl=ES&ceid=ES:es"},
+    {"nombre": "El Mundo - Mutualidades Defensa", "categoria": "Prensa Nacional", "url": "https://news.google.com/rss/search?q=site%3Aelmundo.es+ISFAS+MUFACE&hl=es&gl=ES&ceid=ES:es"},
+    {"nombre": "La Razón - ISFAS Militar", "categoria": "Prensa Nacional", "url": "https://news.google.com/rss/search?q=site%3aklarazon.es+ISFAS+militar&hl=es&gl=ES&ceid=ES:es"},
+    {"nombre": "Europa Press - ISFAS Actualidad", "categoria": "Prensa Nacional", "url": "https://news.google.com/rss/search?q=site%3Aeuropapress.es+ISFAS+MUFACE&hl=es&gl=ES&ceid=ES:es"},
+
+    # 7. PRENSA PROVINCIAL Y REGIONAL[cite: 2]
+    {"nombre": "La Voz de Galicia - ISFAS", "categoria": "Prensa Regional", "url": "https://news.google.com/rss/search?q=site%3alavozdegalicia.es+ISFAS+MUFACE&hl=es&gl=ES&ceid=ES:es"},
+    {"nombre": "El Periódico de Aragón - ISFAS", "categoria": "Prensa Regional", "url": "https://news.google.com/rss/search?q=site%3aelperiodicodearagon.com+ISFAS&hl=es&gl=ES&ceid=ES:es"},
+    {"nombre": "La Verdad de Murcia - ISFAS", "categoria": "Prensa Regional", "url": "https://news.google.com/rss/search?q=site%3alaverdad.es+ISFAS+MUFACE&hl=es&gl=ES&ceid=ES:es"},
+    {"nombre": "Ideal Andalucía - ISFAS", "categoria": "Prensa Regional", "url": "https://news.google.com/rss/search?q=site%3aiideal.es+ISFAS+militar&hl=es&gl=ES&ceid=ES:es"},
+    {"nombre": "El Diario Montañés - ISFAS", "categoria": "Prensa Regional", "url": "https://news.google.com/rss/search?q=site%3aeldiariomontanes.es+ISFAS&hl=es&gl=ES&ceid=ES:es"},
+    {"nombre": "Heraldo de Aragón - ISFAS", "categoria": "Prensa Regional", "url": "https://news.google.com/rss/search?q=site%3aheraldo.es+ISFAS+sanidad&hl=es&gl=ES&ceid=ES:es"},
+    {"nombre": "Las Provincias (Valencia) - ISFAS", "categoria": "Prensa Regional", "url": "https://news.google.com/rss/search?q=site%3alasprovincias.es+ISFAS+MUFACE&hl=es&gl=ES&ceid=ES:es"}
+]
 MESES_ES = {
     1: "Enero", 2: "Febrero", 3: "Marzo", 4: "Abril",
     5: "Mayo", 6: "Junio", 7: "Julio", 8: "Agosto",
