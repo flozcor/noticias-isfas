@@ -448,16 +448,17 @@ def generar_html_interactivo(noticias):
             let fechaTexto = hoy.toLocaleDateString('es-ES', opciones);
             fechaTexto = fechaTexto.charAt(0).toUpperCase() + fechaTexto.slice(1);
 
-            let htmlSnippet = '<table width="100%" cellpadding="0" cellspacing="0" border="0" style="background-color: #f7fafc; font-family: Montserrat, Arial, sans-serif;">';
+           let htmlSnippet = '<table width="100%" cellpadding="0" cellspacing="0" border="0" style="background-color: #f7fafc; font-family: Montserrat, Arial, sans-serif;">';
             htmlSnippet += '<tr><td align="center" style="padding: 0;">';
             
             htmlSnippet += '<table width="100%" cellpadding="0" cellspacing="0" border="0" style="background-color: #ffffff; border-top: 1px solid #e2e8f0; border-bottom: 1px solid #e2e8f0;">';
             
+            // CABECERA UNIFICADA (Idéntica al navegador)
             htmlSnippet += '<tr><td align="center" style="background: linear-gradient(135deg, #1a365d 0%, #2c5282 100%); background-color: #2c5282; padding: 40px 20px; color: #ffffff; border-bottom: 4px solid #3182ce;">';
             htmlSnippet += '<table width="100%" cellpadding="0" cellspacing="0" border="0"><tr><td align="center">';
-            htmlSnippet += '<h1 style="margin: 0; font-size: 32px; font-weight: 700; letter-spacing: 2px; text-transform: uppercase; color: #ffffff; font-family: Montserrat, Arial, sans-serif;">ISFAS</h1>';
-            htmlSnippet += '<div style="margin-top: 8px; font-size: 16px; color: #e2e8f0; letter-spacing: 1px; font-family: Montserrat, Arial, sans-serif;">OFICINA DE COMUNICACIÓN</div>';
-            htmlSnippet += '<table border="0" cellspacing="0" cellpadding="0" style="margin-top: 15px;"><tr><td align="center" bgcolor="rgba(255, 255, 255, 0.15)" style="padding: 6px 16px; border-radius: 20px; font-size: 14px; color: #ffffff; font-weight: 600; border: 1px solid rgba(255, 255, 255, 0.2); font-family: Montserrat, Arial, sans-serif;">' + fechaTexto + '</td></tr></table>';
+            htmlSnippet += '<h1 style="margin: 0; font-size: 35.2px; font-weight: 700; letter-spacing: 2px; text-transform: uppercase; color: #ffffff; font-family: Montserrat, Arial, sans-serif;">ISFAS</h1>';
+            htmlSnippet += '<div style="margin-top: 8px; font-size: 16px; font-weight: 400; color: #e2e8f0; letter-spacing: 1px; font-family: Montserrat, Arial, sans-serif;">OFICINA DE COMUNICACIÓN</div>';
+            htmlSnippet += '<table border="0" cellspacing="0" cellpadding="0" style="margin-top: 15px;"><tr><td align="center" bgcolor="rgba(255, 255, 255, 0.15)" style="padding: 6px 16px; border-radius: 20px; font-size: 14.4px; color: #ffffff; font-weight: 600; border: 1px solid rgba(255, 255, 255, 0.2); font-family: Montserrat, Arial, sans-serif;">' + fechaTexto + '</td></tr></table>';
             htmlSnippet += '</td></tr></table>';
             htmlSnippet += '</td></tr>';
 
@@ -465,10 +466,11 @@ def generar_html_interactivo(noticias):
 
             let textSnippet = "";
 
-            seleccionados.forEach(item => {{
+            seleccionados.forEach(item => {
                 enviadasSet.add(item.enlace);
 
-                htmlSnippet += '<table width="100%" cellpadding="0" cellspacing="0" border="0" style="background-color: #ffffff; border-left: 5px solid #3182ce; border-top: 1px solid #edf2f7; border-right: 1px solid #edf2f7; border-bottom: 1px solid #edf2f7; margin-bottom: 16px; border-radius: 8px;">';
+                // TARJETAS DE NOTICIAS UNIFICADAS
+                htmlSnippet += '<table width="100%" cellpadding="0" cellspacing="0" border="0" style="background-color: #ffffff; border-left: 5px solid #3182ce; border-top: 1px solid #edf2f7; border-right: 1px solid #edf2f7; border-bottom: 1px solid #edf2f7; margin-bottom: 16px; border-radius: 8px; box-shadow: 0 2px 4px rgba(0,0,0,0.03);">';
                 htmlSnippet += '<tr><td style="padding: 16px 20px;">';
                 
                 htmlSnippet += '<table width="100%" cellpadding="0" cellspacing="0" border="0"><tr>';
@@ -484,11 +486,12 @@ def generar_html_interactivo(noticias):
                 
                 htmlSnippet += '</td></tr></table>';
 
-                textSnippet += '[' + item.categoria + '] ' + item.titulo + '\\nEnlace: ' + item.enlace + '\\nFecha: ' + item.fecha_str + ' | Fuente: ' + item.fuente + '\\n\\n';
-            }});
+                textSnippet += '[' + item.categoria + '] ' + item.titulo + '\nEnlace: ' + item.enlace + '\nFecha: ' + item.fecha_str + ' | Fuente: ' + item.fuente + '\n\n';
+            });
 
             htmlSnippet += '</td></tr>';
 
+            // PIE DE PÁGINA UNIFICADO
             htmlSnippet += '<tr><td align="center" style="background-color: #2c5282; color: #ffffff; padding: 20px; font-size: 15.2px; font-weight: 600; letter-spacing: 0.5px; line-height: 1.5; font-family: Montserrat, Arial, sans-serif;">';
             htmlSnippet += '@ISFAS - Instituto Social de las Fuerzas Armadas';
             htmlSnippet += '<div style="color: #cbd5e0; font-weight: 400; display: block; font-size: 13.6px; margin-top: 4px; font-family: Montserrat, Arial, sans-serif;">Oficina de Comunicación - Capitán de Corbeta Fran Lozano</div>';
@@ -496,7 +499,6 @@ def generar_html_interactivo(noticias):
 
             htmlSnippet += '</table>';
             htmlSnippet += '</td></tr></table>';
-
             filtrarNoticias();
 
             if (navigator.clipboard && window.ClipboardItem) {{
