@@ -1,4 +1,4 @@
-# noticias_isfas13.py
+# noticias_isfas14.py
 # v20.7 - Historial persistente, diseño integrado y copia optimizada a ancho completo (100%) para Outlook
 
 import os
