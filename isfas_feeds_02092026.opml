@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<opml version="2.0">
+  <head>
+    <title>Suscripciones RSS - ISFAS, Sanidad Militar y Función Pública</title>
+  </head>
+  <body>
+    <outline text="BOE, BOD y Organismos Públicos">
+      <outline text="BOD Boletin Oficial de Defensa" xmlUrl="https://news.google.com/rss/search?q=%22BOD%22+%22Boletin+Oficial+de+Defensa%22+site%3Adefensa.gob.es&amp;hl=es&amp;gl=ES&amp;ceid=ES:es"/>
+      <outline text="BOE ISFAS Directo" xmlUrl="https://news.google.com/rss/search?q=site%3Aboe.es+ISFAS&amp;hl=es&amp;gl=ES&amp;ceid=ES:es"/>
+      <outline text="BOE ISFAS Concurso/Adjudicacion" xmlUrl="https://news.google.com/rss/search?q=site%3Aboe.es+ISFAS+%28concurso+OR+adjudicacion+OR+licitacion%29&amp;hl=es&amp;gl=ES&amp;ceid=ES:es"/>
+      <outline text="BOE ISFAS Concierto/Resolucion/Prestacion" xmlUrl="https://news.google.com/rss/search?q=site%3Aboe.es+ISFAS+concierto+resolucion+prestacion&amp;hl=es&amp;gl=ES&amp;ceid=ES:es"/>
+      <outline text="BOE ISFAS MUFACE" xmlUrl="https://news.google.com/rss/search?q=site%3Aboe.es+ISFAS+MUFACE&amp;hl=es&amp;gl=ES&amp;ceid=ES:es"/>
+      <outline text="BOE Personal Militar y Retiros" xmlUrl="https://news.google.com/rss/search?q=site%3Aboe.es+%22personal+militar%22+OR+%22clases+pasivas%22+ISFAS&amp;hl=es&amp;gl=ES&amp;ceid=ES:es"/>
+      <outline text="Resoluciones e Instrucciones ISFAS" xmlUrl="https://news.google.com/rss/search?q=ISFAS+BOE+resolucion+instruccion&amp;hl=es&amp;gl=ES&amp;ceid=ES:es"/>
+      <outline text="Seguridad Social INSS Prestaciones" xmlUrl="https://news.google.com/rss/search?q=site%3Aseg-social.es+INSS+prestaciones&amp;hl=es&amp;gl=ES&amp;ceid=ES:es"/>
+      <outline text="Ministerio Función Pública Noticias" xmlUrl="https://news.google.com/rss/search?q=site%3Afuncionpublica.hacienda.gob.es+OR+site%3Amptfp.gob.es+MUFACE+ISFAS&amp;hl=es&amp;gl=ES&amp;ceid=ES:es"/>
+    </outline>
+    
+    <outline text="AEMPS y Salud Pública">
+      <outline text="AEMPS Alerta Medicamentos" xmlUrl="https://news.google.com/rss/search?q=site%3Aaemps.gob.es+alerta+medicamentos&amp;hl=es&amp;gl=ES&amp;ceid=ES:es"/>
+      <outline text="AEMPS Nota Informativa" xmlUrl="https://news.google.com/rss/search?q=site%3Aaemps.gob.es+nota+informativa&amp;hl=es&amp;gl=ES&amp;ceid=ES:es"/>
+      <outline text="AEMPS Noticias" xmlUrl="https://news.google.com/rss/search?q=site%3Aaemps.gob.es+noticias&amp;hl=es&amp;gl=ES&amp;ceid=ES:es"/>
+      <outline text="INGESA Noticias Sanidad" xmlUrl="https://news.google.com/rss/search?q=%22ingesa+noticias+sanidad%22&amp;hl=es&amp;gl=ES&amp;ceid=ES:es"/>
+      <outline text="Portalfarma CGCOF Receta y Medicamentos" xmlUrl="https://news.google.com/rss/search?q=site%3Aportalfarma.com+ISFAS+OR+MUFACE+OR+%22receta+electronica%22&amp;hl=es&amp;gl=ES&amp;ceid=ES:es"/>
+    </outline>
+
+    <outline text="ISFAS, MUFACE y Cobertura Sanitaria">
+      <outline text="ISFAS MUFACE Seguridad Social Prestaciones" xmlUrl="https://news.google.com/rss/search?q=ISFAS+MUFACE+%22Seguridad+Social%22+prestaciones&amp;hl=es&amp;gl=ES&amp;ceid=ES:es"/>
+      <outline text="ISFAS Instituto Social de las Fuerzas Armadas" xmlUrl="https://news.google.com/rss/search?q=ISFAS+%22Instituto+Social+de+las+Fuerzas+Armadas%22&amp;hl=es&amp;gl=ES&amp;ceid=ES:es"/>
+      <outline text="ISFAS MUFACE MUGEJU" xmlUrl="https://news.google.com/rss/search?q=ISFAS+MUFACE+MUGEJU&amp;hl=es&amp;gl=ES&amp;ceid=ES:es"/>
+      <outline text="ISFAS Sistema Nacional de Salud" xmlUrl="https://news.google.com/rss/search?q=ISFAS+%22Sistema+Nacional+de+Salud%22&amp;hl=es&amp;gl=ES&amp;ceid=ES:es"/>
+      <outline text="Concierto Sanitario y Cuadro Médico" xmlUrl="https://news.google.com/rss/search?q=ISFAS+%22concierto+sanitario%22+Adeslas+Asisa&amp;hl=es&amp;gl=ES&amp;ceid=ES:es"/>
+      <outline text="Convenios y Aseguradoras" xmlUrl="https://news.google.com/rss/search?q=ISFAS+convenio+concierto+asisa+adeslas&amp;hl=es&amp;gl=ES&amp;ceid=ES:es"/>
+      <outline text="Receta Electrónica Avanzada" xmlUrl="https://news.google.com/rss/search?q=ISFAS+%22receta+electronica%22+farmacia&amp;hl=es&amp;gl=ES&amp;ceid=ES:es"/>
+      <outline text="Receta Electrónica Mutualidades" xmlUrl="https://news.google.com/rss/search?q=%22receta+electronica%22+ISFAS+MUFACE+MUGEJU&amp;hl=es&amp;gl=ES&amp;ceid=ES:es"/>
+      <outline text="Sanidad Militar Gomez Ulla" xmlUrl="https://news.google.com/rss/search?q=%22Sanidad+Militar%22+ISFAS+%22Gomez+Ulla%22&amp;hl=es&amp;gl=ES&amp;ceid=ES:es"/>
+      <outline text="Dependencia y Ayudas ISFAS" xmlUrl="https://news.google.com/rss/search?q=ISFAS+%22prestacion+economica%22+%22ayuda+de+dependencia%22&amp;hl=es&amp;gl=ES&amp;ceid=ES:es"/>
+      <outline text="Prestaciones Mutuas" xmlUrl="https://news.google.com/rss/search?q=prestaciones+ISFAS+MUFACE+MUGEJU&amp;hl=es&amp;gl=ES&amp;ceid=ES:es"/>
+      <outline text="Delegaciones ISFAS" xmlUrl="https://news.google.com/rss/search?q=%22delegacion+del+ISFAS%22&amp;hl=es&amp;gl=ES&amp;ceid=ES:es"/>
+      <outline text="Clases Pasivas y Pensiones Militares" xmlUrl="https://news.google.com/rss/search?q=%22Clases+Pasivas%22+%22pension+militar%22+OR+ISFAS&amp;hl=es&amp;gl=ES&amp;ceid=ES:es"/>
+    </outline>
+
+    <outline text="Asociaciones y Sindicatos">
+      <outline text="COPERFAS e ISFAS" xmlUrl="https://news.google.com/rss/search?q=COPERFAS+ISFAS&amp;hl=es&amp;gl=ES&amp;ceid=ES:es"/>
+      <outline text="CSIF e ISFAS" xmlUrl="https://news.google.com/rss/search?q=CSIF+ISFAS+%22Sanidad+Militar%22&amp;hl=es&amp;gl=ES&amp;ceid=ES:es"/>
+      <outline text="Asociaciones Militares" xmlUrl="https://news.google.com/rss/search?q=ISFAS+ASFASPRO+ATME+AUME&amp;hl=es&amp;gl=ES&amp;ceid=ES:es"/>
+      <outline text="ASFASPRO Noticias RSS" xmlUrl="https://www.asfaspro.es/rss"/>
+    </outline>
+
+    <outline text="Prensa Sanitaria, Legal y General">
+      <outline text="Gaceta Médica" xmlUrl="https://gacetamedica.com/feed/"/>
+      <outline text="Notas de Prensa Defensa" xmlUrl="https://www.defensa.gob.es/gabinete/notas_prensa/rss.xml"/>
+      <outline text="Noticias de Diario Médico" xmlUrl="https://www.diariomedico.com/rss"/>
+      <outline text="Redacción Médica" xmlUrl="https://redaccionmedica.com/rss/ultimas-noticias.xml"/>
+      <outline text="Jurisprudencia Tribunal Supremo ISFAS" xmlUrl="https://news.google.com/rss/search?q=%22Tribunal+Supremo%22+ISFAS+OR+%22asistencia+sanitaria%22&amp;hl=es&amp;gl=ES&amp;ceid=ES:es"/>
+      <outline text="Confilegal Sanidad y Defensa" xmlUrl="https://news.google.com/rss/search?q=site%3Aconfilegal.com+ISFAS+OR+MUFACE+OR+%22Sanidad+Militar%22&amp;hl=es&amp;gl=ES&amp;ceid=ES:es"/>
+      <outline text="ABC - ISFAS MUFACE" xmlUrl="https://news.google.com/rss/search?q=site%3Aabc.es+ISFAS+MUFACE&amp;hl=es&amp;gl=ES&amp;ceid=ES:es"/>
+      <outline text="El Diario Montañés - ISFAS" xmlUrl="https://news.google.com/rss/search?q=site%3Aeldiariomontanes.es+ISFAS&amp;hl=es&amp;gl=ES&amp;ceid=ES:es"/>
+      <outline text="El Mundo - ISFAS MUFACE" xmlUrl="https://news.google.com/rss/search?q=site%3Aelmundo.es+ISFAS+MUFACE&amp;hl=es&amp;gl=ES&amp;ceid=ES:es"/>
+      <outline text="El País - ISFAS Sanidad" xmlUrl="https://news.google.com/rss/search?q=site%3Aelpais.com+ISFAS+sanidad&amp;hl=es&amp;gl=ES&amp;ceid=ES:es"/>
+      <outline text="El Periódico de Aragón - ISFAS" xmlUrl="https://news.google.com/rss/search?q=site%3Aelperiodicodearagon.com+ISFAS&amp;hl=es&amp;gl=ES&amp;ceid=ES:es"/>
+      <outline text="Europa Press - ISFAS MUFACE" xmlUrl="https://news.google.com/rss/search?q=site%3Aeuropapress.es+ISFAS+MUFACE&amp;hl=es&amp;gl=ES&amp;ceid=ES:es"/>
+      <outline text="Heraldo de Aragón - ISFAS Sanidad" xmlUrl="https://news.google.com/rss/search?q=site%3Aheraldo.es+ISFAS+sanidad&amp;hl=es&amp;gl=ES&amp;ceid=ES:es"/>
+      <outline text="Ideal - ISFAS Militar" xmlUrl="https://news.google.com/rss/search?q=site%3Aideal.es+ISFAS+militar&amp;hl=es&amp;gl=ES&amp;ceid=ES:es"/>
+      <outline text="La Razón - ISFAS Militar" xmlUrl="https://news.google.com/rss/search?q=site%3Alarazon.es+ISFAS+militar&amp;hl=es&amp;gl=ES&amp;ceid=ES:es"/>
+      <outline text="Las Provincias - ISFAS MUFACE" xmlUrl="https://news.google.com/rss/search?q=site%3Alasprovincias.es+ISFAS+MUFACE&amp;hl=es&amp;gl=ES&amp;ceid=ES:es"/>
+      <outline text="La Verdad - ISFAS MUFACE" xmlUrl="https://news.google.com/rss/search?q=site%3Alaverdad.es+ISFAS+MUFACE&amp;hl=es&amp;gl=ES&amp;ceid=ES:es"/>
+      <outline text="La Voz de Galicia - ISFAS MUFACE" xmlUrl="https://news.google.com/rss/search?q=site%3Alavozdegalicia.es+ISFAS+MUFACE&amp;hl=es&amp;gl=ES&amp;ceid=ES:es"/>
+    </outline>
+  </body>
+</opml>
